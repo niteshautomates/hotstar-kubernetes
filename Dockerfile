@@ -11,7 +11,9 @@ COPY package.json package-lock.json /app/
 RUN npm install
 
 # Copy the entire codebase to the working directory
-COPY . /app/
+FROM --platform=arm64,arm64 node:alpine AS runtime
+WORKDIR /app
+COPY COPY --from=build /app/ ./
 
 # Expose the port your app runs on (replace <PORT_NUMBER> with your app's actual port)
 EXPOSE 3000
