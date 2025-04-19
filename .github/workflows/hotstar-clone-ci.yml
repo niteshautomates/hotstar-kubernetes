@@ -81,7 +81,7 @@ jobs:
       - name: Update image tag in Helm chart
         run: |
                   echo "Updating image tag in Manifest file"
-                   sed -i "s#image: nitesh2611/hotstar-clone:.*#image: nitesh2611/hotstar-clone:${github.run_id}#g" /K8S/manifest.yml
+                   sed -i "s#image: nitesh2611/hotstar-clone:.*#image: nitesh2611/hotstar-clone:${{github.run_id}}#g" /K8S/manifest.yml
                   cat /K8S/manifest.yml
                   echo "Image tag updated in Helm chart"
         
