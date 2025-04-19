@@ -13,7 +13,7 @@ RUN npm install
 # Copy the entire codebase to the working directory
 FROM --platform=$BUILDPLATFORM node:alpine AS runtime
 WORKDIR /app
-COPY COPY --from=build /app/ ./
+COPY --from=build /app/ ./
 
 # Expose the port your app runs on (replace <PORT_NUMBER> with your app's actual port)
 EXPOSE 3000
