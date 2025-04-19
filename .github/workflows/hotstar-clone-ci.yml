@@ -43,7 +43,7 @@ jobs:
       - name: Set up docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
-          platforms: linux/ARM64
+          platforms: linux/AMD64
       
 
       - name: Login to Docker Hub
@@ -57,7 +57,7 @@ jobs:
         with:
             context: .
             file: ./Dockerfile
-            platforms: linux/ARM64
+            platforms: linux/AMD64
             push: true
             tags: ${{ vars.DOCKERHUB_USERNAME }}/hotstar-clone:${{github.run_id}}
       
