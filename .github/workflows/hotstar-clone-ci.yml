@@ -28,9 +28,9 @@ jobs:
 
     steps:
       
-    
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true    
+    - uses: actions/checkout@v4
+    - name: Run linters
+      uses: wearerequired/lint-action@v2
+      with:
+        eslint: true
+        prettier: true    
