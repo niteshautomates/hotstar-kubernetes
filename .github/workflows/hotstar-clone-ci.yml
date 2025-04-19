@@ -89,6 +89,6 @@ jobs:
         run: |
                     git config --global user.email "niteshwayafalkar@gmail.com"
                     git config --global user.name "Nitesh Wayafalkar"
-                    git add /K8S/manifest.yml
+                    git add K8S/manifest.yml
                     git commit -m "Update tag in manifest file"
                     git push
