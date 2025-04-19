@@ -26,9 +26,9 @@ kind: Service
 metadata:
   name: hotstar-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: hotstar
   ports:
-  - port: 80
+  - port: 3000
     targetPort: 3000
