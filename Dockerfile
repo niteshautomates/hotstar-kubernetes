@@ -1,5 +1,5 @@
 # Use Node.js Alpine base image
-FROM --platform=linux/amd64 node:latest AS Build
+FROM --platform=linux/amd64 node:alpine AS Build
 
 # Create and set the working directory inside the container
 WORKDIR /app
