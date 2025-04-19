@@ -1,5 +1,5 @@
 # Use Node.js Alpine base image
-FROM node:alpine AS Build
+FROM --platform=$BUILDPLATFORM node:alpine AS build
 
 # Create and set the working directory inside the container
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY package.json package-lock.json /app/
 RUN npm install
 
 # Copy the entire codebase to the working directory
-FROM --platform=arm64,arm64 node:alpine AS runtime
+FROM --platform=$BUILDPLATFORM node:alpine AS runtime
 WORKDIR /app
 COPY COPY --from=build /app/ ./
 
