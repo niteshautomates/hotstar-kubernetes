@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hotstar-container
-        image: nitesh2611/hotstar-clone:14552756465
+        image: nitesh2611/hotstar-clone:14552768388
         ports:
         - containerPort: 3000
 ---
